@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PYTHON_EXE="C:\\Users\\o.sow\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
         VENV_DIR= 'venv'
     }
 
@@ -14,13 +15,13 @@ pipeline {
 
         stage('Installation des dependances') {
             steps {
-                bat 'python -m venv venv'
+                bat '%PYTHON_EXE% -m venv %VENV_DIR%'
             }
         }
 
         stage('compiler le script') {
             steps {
-                bat '.\\venv\\Scripts\\python app.py'
+                bat '%VENV_DIR%\\Scripts\\python app.py'
             }
         }
     }
