@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        VENV_DIR= 'venv'
+    }
+
     stages {
         stage('recup code github') {
             steps {
