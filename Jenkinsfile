@@ -16,7 +16,7 @@ pipeline {
 
         stage('compiler le script') {
             steps {
-                bat '.\\venvbin\\python app.py'
+                bat '.\\venv\\Scripts\\python app.py'
             }
         }
     }
